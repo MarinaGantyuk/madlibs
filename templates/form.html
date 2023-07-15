@@ -1,0 +1,41 @@
+{% block content %}
+
+<h1>Form</h1>
+<form action="/story">
+  <p>
+    <label>place</label>
+    <input type="text" placeholder="place" name="place" />
+  </p>
+
+  <p>
+    <label>noun</label>
+    <input type="text" placeholder="noun" name="noun" />
+  </p>
+
+  <p>
+    <label>verb</label>
+    <input type="text" placeholder="verb" name="verb" />
+  </p>
+
+  <p>
+    <label>adjective</label>
+    <input type="text" placeholder="adjective" name="adjective" />
+  </p>
+
+  <p>
+    <label>plural_noun</label>
+    <input type="text" placeholder="plural_noun" name="plural_noun" />
+  </p>
+
+  <p>
+    <select name="story">
+      <option value="">select story</option>
+      {% for story in stories %}
+      <option value="{{ story.code }}">{{ story.title }}</option>
+      {% endfor %}
+    </select>
+  </p>
+
+  <button>Submit!</button>
+</form>
+{% endblock %}
